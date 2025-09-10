@@ -10,34 +10,75 @@ A simple Python-based tool to detect and crop frontal faces from images, optimiz
 - Simple, easy-to-use Python script.
 
 ## 📂 File Structure
-------------------------------------------------------------------------
-
-
-✅ Step 1: Download the Required Files
-
-Model Weights (res10_300x300_ssd_iter_140000.caffemodel):
-
-You can download the model weights from Hugging Face
-.
-
-Configuration File (deploy.prototxt):
-https://huggingface.co/spaces/liangtian/birthdayCrown/blob/3db8f1c391e44bd9075b1c2854634f76c2ff46d0/res10_300x300_ssd_iter_140000.caffemodel?utm_source=chatgpt.com
-https://huggingface.co/spaces/OpenCVUniversity/face-detection-using-OpenCV/blob/main/deploy.prototxt?utm_source=chatgpt.com
-Download the configuration file from Hugging Face
-.
-
-✅ Step 2: Prepare Your Project Directory
-
-Ensure your project directory has the following structure:
 
 /your_project_directory
-├── img/                    # Input images
-├── crop_img/               # Output cropped images
-├── deploy.prototxt         # Downloaded configuration file
-└── res10_300x300_ssd_iter_140000.caffemodel  # Downloaded model weights
+├── img/ # Input images folder
+├── crop_img/ # Output cropped images folder
+├── deploy.prototxt # Face detector configuration file
+├── res10_300x300_ssd_iter_140000.caffemodel # Pre-trained model weights
+├── face_cropper.py # Main Python script
+└── README.md # Project documentation
 
-✅ Step 3: Use the Provided Python Script
+yaml
+Copy code
 
-With the necessary files in place, you can use the previously provided Python script to perform face detection and cropping. This script utilizes OpenCV's DNN module to detect faces in images located in the img/ folder and saves the cropped faces as 720x720 pixel images in the crop_img/ folder.
+---
 
-If you encounter any issues or need further assistance with setting up the environment or running the script, feel free to ask!
+## ✅ Step 1: Download the Required Files
+
+### 📥 Model Weights  
+**`res10_300x300_ssd_iter_140000.caffemodel`**  
+You can download the model weights from this link:  
+[Download from Hugging Face](https://huggingface.co/spaces/liangtian/birthdayCrown/blob/3db8f1c391e44bd9075b1c2854634f76c2ff46d0/res10_300x300_ssd_iter_140000.caffemodel?utm_source=chatgpt.com)
+
+### 📥 Configuration File  
+**`deploy.prototxt`**  
+Download the configuration file from this link:  
+[Download from Hugging Face](https://huggingface.co/spaces/OpenCVUniversity/face-detection-using-OpenCV/blob/main/deploy.prototxt?utm_source=chatgpt.com)
+
+---
+
+## ✅ Step 2: Prepare Your Project Directory
+
+Make sure your project directory looks like this:
+
+/your_project_directory
+├── img/ # Place your input images here
+├── crop_img/ # Cropped faces will be saved here
+├── deploy.prototxt # Downloaded configuration file
+└── res10_300x300_ssd_iter_140000.caffemodel # Downloaded model weights
+
+arduino
+Copy code
+
+You can create the folders using:
+
+```bash
+mkdir img crop_img
+Add the images you want to process in the img/ folder.
+
+✅ Step 3: Run the Python Script
+With everything set up, you can run the script using:
+
+bash
+Copy code
+python face_cropper.py
+The script will:
+✔ Detect faces in each image
+✔ Verify that the face is fully visible and front-facing
+✔ Crop the face with padding
+✔ Resize it to 720×720 pixels
+✔ Save the result in the crop_img/ folder
+
+📧 Contact
+For any questions, suggestions, or feedback, feel free to contact:
+
+Sagar Hodar
+✉ hodarsagar@gmail.com
+
+📜 Credits
+This project uses the OpenCV library and the publicly available deep learning face detector model from OpenCV’s samples. Special thanks to the OpenCV community for providing open-source tools and models that make computer vision accessible to everyone.
+
+📄 License
+Feel free to use and modify this project for educational or personal purposes. Please acknowledge the source if you share or publish your work.
+
