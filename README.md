@@ -12,15 +12,15 @@ A simple Python-based tool to detect and crop frontal faces from images, optimiz
 ## 📂 File Structure
 
 /your_project_directory
-├── img/ # Input images folder
-├── crop_img/ # Output cropped images folder
-├── deploy.prototxt # Face detector configuration file
-├── res10_300x300_ssd_iter_140000.caffemodel # Pre-trained model weights
-├── face_cropper.py # Main Python script
-└── README.md # Project documentation
 
-yaml
-Copy code
+img/ # Input images folder
+crop_img/ # Output cropped images folder
+deploy.prototxt # Face detector configuration file
+res10_300x300_ssd_iter_140000.caffemodel # Pre-trained model weights
+face_cropper.py # Main Python script
+README.md # Project documentation
+
+
 
 ---
 
@@ -40,29 +40,21 @@ Download the configuration file from this link:
 
 ## ✅ Step 2: Prepare Your Project Directory
 
-Make sure your project directory looks like this:
 
-/your_project_directory
-├── img/ # Place your input images here
-├── crop_img/ # Cropped faces will be saved here
-├── deploy.prototxt # Downloaded configuration file
-└── res10_300x300_ssd_iter_140000.caffemodel # Downloaded model weights
 
-arduino
-Copy code
-
-You can create the folders using:
-
-```bash
 mkdir img crop_img
+
 Add the images you want to process in the img/ folder.
 
-✅ Step 3: Run the Python Script
+
+## ✅ Step 3: Run the Python Script
 With everything set up, you can run the script using:
 
 bash
-Copy code
+
 python face_cropper.py
+
+
 The script will:
 ✔ Detect faces in each image
 ✔ Verify that the face is fully visible and front-facing
